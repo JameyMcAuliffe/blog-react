@@ -28,7 +28,10 @@ class PostsNew extends Component {
 
 	//values come from the submitted form
 	onSubmit(values) {
-		this.props.createPost(values);
+		this.props.createPost(values, () => {
+			//this.props.history comes from Route component in index.js
+			this.props.history.push('/');
+		});
 	}
 
 	render() {
